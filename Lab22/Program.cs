@@ -19,7 +19,7 @@ namespace Lab22
             Task task2 = task1.ContinueWith(action);
 
             Action<Task<int[,]>> action2 = new Action<Task<int[,]>>(GetSum);
-            Task task3 = task2.ContinueWith((Action<Task>)action2);
+            Task task3 = task1.ContinueWith(action2);
 
             task1.Start();
             Console.ReadKey();
